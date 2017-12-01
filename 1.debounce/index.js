@@ -22,7 +22,7 @@
                 //初始timeout为undefined，所以callnow为true
                 var callnow = !timeout;
                 timeout = setTimeout(() => {
-                    //停止触发才能让timeout变成null，不然一直都是计时器，call为false
+                    //停止触发才能让timeout变成null，不然一直都是计时器，callnow为false
                     timeout = null;
                 }, wait);
                 if (callnow) {
