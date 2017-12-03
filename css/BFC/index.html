@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* basic */
+        .div1{
+            background-color: red;
+            width: 200px;
+            height: 80px;
+        }
+        .div2{
+            background-color: green;
+            width: 400px;
+            height: 80px;
+        }
+        .div3{
+            background-color: yellow;
+            width: 100px;
+            height: 120px;
+        }
+        .div4{
+            background-color: blue;
+            width: 350px;
+            height: 100px;
+        }
+        /* float */
+        .float{
+            float: left;
+        }
+
+        /* 浮动： */
+        /* div2向左浮动，由于脱离了文档流，原先所占的位置会空出，div3将重新占据它的位置 */
+        /* div2和div3同时向左浮动 ,div4和div1组成新的标准流,div2挡住了div3，所以会跟随再div2后*/
+        /* 假如某个元素A是浮动的，如果A的上一个元素也是浮动的，那么A会跟在上一个元素的后面（如果这一行位置不够就在下一行
+        )。如果A的上一个元素不浮动，A的顶部紧靠上一个元素的底部 */
+        /* div的顺序是HTML代码中div的顺序决定 */
+        /* 浮动元素总是顶部紧贴上一个标准流（如果是标准流）的元素的底部 */
+        /* 元素在标准流中总是竖向排列，浮动之后横向排布 */
+
+        /* 清除浮动 */
+        /* 清除浮动可以打破横向排列 */
+        /* clear: 指定一个元素是否可以在它之前的浮动元素的旁边，或者必须
+        向下移动（清除浮动）在它的下面。*/
+        /* 清除浮动只能影响使用清除的元素本身，不能影响其他元素，清除的元素将占据新的一行 */
+
+        /* 闭合浮动：浮动由于脱离了标准流，所以不无法将父元素的高度撑起来，会造成高度塌陷 */
+        /* 对于浮动元素的父元素来说由于子元素浮动，所以它是没有闭合的 */
+        /* 1.空div clear：both方法：因为clear：both所以这个元素的两端不能有浮动元素，它就只能不停的向下移，直到两端没有浮动
+        元素为止，这个过程就可以撑起高度. */
+        /* 2:overflow:hidden */
+        /* 3:.clearfix:after{
+                content:' ';
+                height:0;
+                display:block;
+                clear:both;
+                visbility:hidden;
+        } */
+
+        /* BFC: */
+        /* 隔离的独立容器，里面的元素不会影响容器外的元素 */
+        /* BFC的特性：每个元素margin-left与容器border-left接触 */
+        /* margin在垂直方向重叠 */
+        /* 包含float元素,计算BFC高度时,浮动元素也参与运算 */
+        /* 触发BFC */
+        /* float不为none,position为absolute,overflow不为visible,display为inline-block，table-cell，flex */
+
+
+    </style>
+</head>
+<body>
+    <!-- 浮动使得元素脱离标准流，漂浮于标准流之上 -->
+    <div class="div1">div1</div>
+    <div class="div2 float">div2</div>
+    <div class="div3 float">div3</div>
+    <div class="div4">div4</div>
+</body>
+</html>

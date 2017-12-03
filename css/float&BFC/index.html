@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* basic */
+        .div1{
+            background-color: red;
+            width: 200px;
+            height: 80px;
+        }
+        .div2{
+            background-color: green;
+            width: 400px;
+            height: 80px;
+        }
+        .div3{
+            background-color: yellow;
+            width: 100px;
+            height: 120px;
+        }
+        .div4{
+            background-color: blue;
+            width: 350px;
+            height: 100px;
+        }
+        /* float */
+        .float{
+            float: left;
+        }
+        /* div2向左浮动，由于脱离了文档流，原先所占的位置会空出，div3将重新占据它的位置 */
+        /* div2和div3同时向左浮动 ,div4和div1组成新的标准流,div2挡住了div3，所以会跟随再div2后*/
+        /* 假如某个元素A是浮动的，如果A的上一个元素也是浮动的，那么A会跟在上一个元素的后面（如果这一行位置不够就在下一行
+        )。如果A的上一个元素不浮动，A的顶部紧靠上一个元素的底部 */
+        /* div的顺序是HTML代码中div的顺序决定 */
+        /* 浮动元素总是顶部紧贴上一个标准流（如果是标准流）的元素的底部 */
+    </style>
+</head>
+<body>
+    <!-- 浮动使得元素脱离标准流，漂浮于标准流之上 -->
+    <div class="div1">div1</div>
+    <div class="div2 float">div2</div>
+    <div class="div3 float">div3</div>
+    <div class="div4">div4</div>
+</body>
+</html>
