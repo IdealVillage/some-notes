@@ -55,6 +55,7 @@ function throttle(func,wait) {
         //执行完清除定时器，接下来就可以设置下个定时器了
         timeout=null;
         func.apply(context,args);
+        console.log("再次执行");
     };
 
     var throttled=function() {
@@ -63,7 +64,7 @@ function throttle(func,wait) {
         context=this;
         args=arguments;
         if (remaining<=0||remaining>wait) {
-            //用来最后不触发事件再执行一次
+            //如果有定时器就清除
             if (timeout) {
                 clearTimeout(timeout);
                 timeout=null;
@@ -71,8 +72,10 @@ function throttle(func,wait) {
             previous=now;
             //一开始执行一次
             func.apply(context,args);
+            console.log("执行");
         }else if(!timeout){
             //剩余时间结束后执行函数
+            //事件停止触发后执行一次
             timeout=setTimeout(later,remaining);
         }  
     };

@@ -31,8 +31,11 @@ function flatten(arr) {
     }
 }
 
+
+
 //underscore的方法
 function flatten(input,shallow,strict,output) {
+    //便于递归调用
     output=output||[];
     var idx=output.length;
 
